@@ -17,9 +17,14 @@ import dropArrow from '../../assets/images/dropArrow.png'
 import Modal from '../../components/Modal/Modal';
 import { fetchLiveMarket } from '../../store/redux/action/action';
 import { useDispatch } from 'react-redux';
+import useSocket from '../../hooks/useSocket';
 const HomePage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false)
     const dispatch = useDispatch();
+    const orderData = useSocket("wss://comx-sand-api.afexnigeria.com/stream/trades")
+    const clientData = useSocket("wss://comx-sand-api.afexnigeria.com/stream/client-positions?cid=9900153747")
+
+    console.log(orderData, clientData)
 
     // fetch default data
     useEffect(() => {

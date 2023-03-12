@@ -3,6 +3,8 @@ import { CONFIG } from '../../constants/config'
 
 export const axiosClient = ()=>{
     axios.defaults.baseURL = CONFIG.BASE_URL_DEV;
+
+    axios.defaults.withCredentials = true;
     return axios;
 }
 
