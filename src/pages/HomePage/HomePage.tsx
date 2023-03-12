@@ -8,6 +8,7 @@ import ChartCard from '../../components/ChartCard/ChartCard';
 import fill from '../../assets/images/Fill.png'
 import fill2 from '../../assets/images/fill2.png'
 import fill3 from '../../assets/images/fill3.png'
+import Table from '../../components/Table/Table';
 const HomePage = () => {
     return (
         // <Container fluid>
@@ -58,7 +59,18 @@ const HomePage = () => {
                             img={fill3}
                         /></Col>
                     </Row>
+                    <Row>
+                        <Col >
+                            <Table />
+                        </Col>
+
+                        <Col>
+                            <Table />
+                        </Col>
+                    </Row>
+
                 </Col>
+
 
             </Row>
         </Container>
