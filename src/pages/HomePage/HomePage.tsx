@@ -18,13 +18,29 @@ import Modal from '../../components/Modal/Modal';
 import { fetchLiveMarket } from '../../store/redux/action/action';
 import { useDispatch } from 'react-redux';
 import useSocket from '../../hooks/useSocket';
+import { ReadyState } from 'react-use-websocket';
 const HomePage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false)
     const dispatch = useDispatch();
     const orderData = useSocket("wss://comx-sand-api.afexnigeria.com/stream/trades")
     const clientData = useSocket("wss://comx-sand-api.afexnigeria.com/stream/client-positions?cid=9900153747")
 
-    console.log(orderData, clientData)
+    // console.log(orderData, clientData)
+
+    // listener for order
+    useEffect(()=>{
+        // if(orderData.readyState === ReadyState.OPEN){
+        if((orderData.messageHistory).length !== 0){
+            console.log(orderData.lastMessage, orderData.messageHistory)
+        }
+    }, [orderData.readyState])
+
+    // listener for client
+    useEffect(()=>{
+        if((clientData.messageHistory).length !== 0){
+            console.log(clientData.lastMessage, clientData.messageHistory)
+        }
+    }, [clientData.readyState])
 
     // fetch default data
     useEffect(() => {

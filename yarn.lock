@@ -327,6 +327,13 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
   integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
+"@ibnlanre/cipher@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ibnlanre/cipher/-/cipher-2.0.1.tgz#fbd614c23e7ea422ceaf928efd1c75db779dea10"
+  integrity sha512-EYLgBuoSKCryiiey+dKHVx8IDPfOc9Wb4aL6EcjxiKiQlLOTzOH5Xg80+GGpv213+sr/cFdbqQeu/tMT/QfM8g==
+  dependencies:
+    "@types/node" "^18.14.6"
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"
@@ -425,6 +432,11 @@
   dependencies:
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
+
+"@types/node@^18.14.6":
+  version "18.15.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.0.tgz#286a65e3fdffd691e170541e6ecb0410b16a38be"
+  integrity sha512-z6nr0TTEOBGkzLGmbypWOGnpSpSIBorEhC4L+4HeQ2iezKCi4f77kyslRwvHeNitymGQ+oFyIWGP96l/DPSV9w==
 
 "@types/prop-types@*":
   version "15.7.5"

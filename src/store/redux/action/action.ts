@@ -10,6 +10,20 @@ export const updateLoaderState = (bool: boolean, dispatch: any)=>{
     })
 }
 
+export const updateClientData = (data: any, dispatch: any)=>{
+    dispatch({
+        type: ACTION_TYPE.APP_CLIENT,
+        payload: data
+    })
+}
+
+export const updateOrderData = (data: any, dispatch: any)=>{
+    dispatch({
+        type: ACTION_TYPE.APP_ORDER,
+        payload: data
+    })
+}
+
 export const fetchLiveMarket = async (dispatch: any)=>{
     // @ts-ignore
     const _liveMarket = await axios.get("/security-price/live");
