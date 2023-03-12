@@ -1,0 +1,22 @@
+.bedcrumContainer {
+    display: flex;
+    align-items: center;
+}
+
+.bedcrumContainer span {
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.bedcrumContainer span:last-child {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.homeWrapper {
+    /* background-color: green; */
+    height: 100vh;
+    padding-top: 22px;
+}

@@ -1,0 +1,28 @@
+.sideBarContainer {
+    background-color: #fff;
+    width: 98px !important;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 1px solid #EAEBF0;
+}
+
+.link {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoImg {
+    width: 66px;
+    height: 38px;
+    display: inline-block;
+    margin-bottom: 50px;
+    margin-top: 24px;
+}
