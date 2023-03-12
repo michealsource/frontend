@@ -68,7 +68,7 @@ const HomePage = () => {
                         /></Col>
                     </Row>
                     <Tabs />
-                    <Row className={styles.TableWrapper}>
+                    <Row >
                         <Col >
                             <Table />
                         </Col>
@@ -102,7 +102,7 @@ const HomePage = () => {
 
             <Modal
                 openModal={openModal}
-
+                onClose={() => setOpenModal(false)}
             />
         </Container>
     )

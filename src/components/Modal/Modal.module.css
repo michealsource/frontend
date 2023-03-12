@@ -1,5 +1,5 @@
 .overLay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     width: 100%;
     height: 100%;
@@ -13,9 +13,82 @@
 .modalContainer {
     max-width: 400px;
     width: 100%;
+    height: 462px;
     position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 17%;
+    right: 10%;
     background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 1px rgba(152, 161, 179, 0.1), 0px 15px 35px -5px rgba(17, 24, 38, 0.2), 0px 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
 }
+
+.headerTitle {
+    font-weight: 600;
+    font-size: 16px;
+    color: #171C26;
+}
+
+.topHeader h6 {
+    margin-top: 46px;
+    color: #5F6D7E;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.bordBtn {
+    outline: none;
+    border: none;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(70, 79, 96, 0.16);
+    border-radius: 4px;
+    background: #FFFFFF;
+    padding: 2px 8px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 16px;
+}
+
+.productHeader {
+    color: #5F6D7E;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 34px;
+}
+
+.productHeader h6 {
+    margin-bottom: 22px;
+}
+
+.Vertical {
+    width: 100%;
+}
+
+.resetBtn {
+    outline: none;
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(70, 79, 96, 0.16);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.applytBtn {
+    outline: none;
+    border: none;
+    background: #FF0500;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.actionContainer {
+    text-align: end;
+    margin-top: 30px;
+}
+
+.productItems {}
