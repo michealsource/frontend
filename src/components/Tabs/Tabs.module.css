@@ -1,0 +1,47 @@
+.countContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.tabContainer {
+    display: inline-block;
+    margin-right: 24px;
+    margin-top: 47px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #5F6D7E;
+    cursor: pointer;
+}
+
+.countBox {
+    width: 27px;
+    height: 18px;
+    background: #EFEFF1;
+    border-radius: 20px;
+    color: #1F1F1F;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.horizontalLine {
+    height: 1px;
+    background: #EAEBF0;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.activeBottomLine {
+    height: 1px;
+    width: 100%;
+    background-color: red;
+    position: relative;
+    top: 16px;
+}
+
+.activeTabLink {
+    color: red;
+    transition: 0.2s ease-in;
+}

@@ -1,8 +1,15 @@
 import React from 'react'
 import styles from './Table.module.css'
-const Table = () => {
+import { tableData } from '../../constants/tableDatas';
+type ButtonProps = {
+    // 👇️ type as React.CSSProperties
+    style?: React.CSSProperties;
+    bgStle?: React.CSSProperties
+
+};
+const Table = ({ style, bgStle }: ButtonProps) => {
     return (
-        <div className={styles.tableContainer}>
+        <div className={`${styles.tableContainer}`}>
             <h3 className={styles.heading}>Buy Board</h3>
             <table className={`${styles.table} ${styles.sticky}`}>
                 <thead>
@@ -14,97 +21,15 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody className={styles.tableBody}>
-                    <tr>
-                        <td>Soybeans (SSBS) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-                    <tr>
-                        <td>Paddy Rice (SPRL)</td>
-                        <td>86</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-                    <tr>
-                        <td>Maize (SMAZ)</td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td>
-                            <span className={styles.buyText}> Buy</span>
 
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Sorghum (SSGM) </td>
-                        <td>2003</td>
-                        <td className={styles.priceText}> 6,471.39</td>
-                        <td ><span className={styles.buyText}> Buy</span></td>
-                    </tr>
+                    {tableData.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.Product}</td>
+                            <td>{item.Quantity}</td>
+                            <td className={styles.priceText} style={style}>{item.Price}</td>
+                            <td><span className={styles.buyText} style={bgStle}>{item.action}</span></td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

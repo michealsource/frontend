@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import SideBar from '../../components/SideBar/SideBar';
@@ -9,17 +9,15 @@ import fill from '../../assets/images/Fill.png'
 import fill2 from '../../assets/images/fill2.png'
 import fill3 from '../../assets/images/fill3.png'
 import Table from '../../components/Table/Table';
+import Tabs from '../../components/Tabs/Tabs';
+import Marquee from "react-fast-marquee";
+import { liveData } from '../../constants/liveData';
+import candle from '../../assets/images/candle.png'
+import dropArrow from '../../assets/images/dropArrow.png'
+import Modal from '../../components/Modal/Modal';
 const HomePage = () => {
+    const [openModal, setOpenModal] = useState<boolean>(false)
     return (
-        // <Container fluid>
-        //     <Row >
-        //         <Col xs={2}><SideBar /></Col>
-        //         <Col className={styles.homeWrapper}>
-
-        //         </Col>
-        //     </Row>
-        // </Container>
-
         <Container fluid>
             <Row>
                 <Col sm={1}><SideBar /></Col>
@@ -30,9 +28,19 @@ const HomePage = () => {
                         <span>Home</span>
                     </div>
 
-                    <div className='mt-5'>
-                        <h4>Market</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur. Adipiscing egestas </p>
+                    <div className='mt-5 d-flex justify-content-between'>
+                        <div>
+                            <h4>Market</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur. Adipiscing egestas </p>
+                        </div>
+
+                        <div className=''>
+                            <button
+                                onClick={() => setOpenModal(!openModal)}
+                                className={styles.btnAction}>Page Setting <img src={candle} alt="" width={20} height={20} /> </button>
+                            <button className={styles.btnAction}>Demo <img src={dropArrow} alt="" width={10.2} height={5.91} /> </button>
+                        </div>
+
                     </div>
 
                     <Row>
@@ -59,20 +67,43 @@ const HomePage = () => {
                             img={fill3}
                         /></Col>
                     </Row>
-                    <Row>
+                    <Tabs />
+                    <Row className={styles.TableWrapper}>
                         <Col >
                             <Table />
                         </Col>
 
                         <Col>
-                            <Table />
+                            <Table
+                                style={{ color: 'red' }}
+                                bgStle={{ backgroundColor: "#FFF2F0", color: "#E2341D" }}
+                            />
                         </Col>
                     </Row>
 
+                    <div className={styles.chatWrapper}>
+                        <div className={styles.innerBg}>
+                            Live Market
+                        </div>
+
+                        <Marquee>
+                            {liveData.map((item, index) => (
+                                <div className={styles.marqueeContainer} key={index}>
+                                    <span>{item.title}</span>
+                                    <span>{item.amount}</span>
+                                </div>
+                            ))}
+                        </Marquee>
+                    </div>
+
+
                 </Col>
-
-
             </Row>
+
+            <Modal
+                openModal={openModal}
+
+            />
         </Container>
     )
 }
