@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import SideBar from '../../components/SideBar/SideBar';
@@ -15,8 +15,19 @@ import { liveData } from '../../constants/liveData';
 import candle from '../../assets/images/candle.png'
 import dropArrow from '../../assets/images/dropArrow.png'
 import Modal from '../../components/Modal/Modal';
+import { fetchLiveMarket } from '../../store/redux/action/action';
+import { useDispatch } from 'react-redux';
 const HomePage = () => {
     const [openModal, setOpenModal] = useState<boolean>(false)
+    const dispatch = useDispatch();
+
+    // fetch default data
+    useEffect(() => {
+        fetchLiveMarket(dispatch);
+    
+    }, [])
+    
+
     return (
         <Container fluid>
             <Row>
